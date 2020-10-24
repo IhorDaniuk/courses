@@ -1,7 +1,21 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
-  "compilerOptions": {
+  "compilerOptions": { 
+    "paths": {
+      "@env": [
+          "src/environments/environment"
+      ],
+      "@app/*": [
+          "src/app/*"
+      ],
+      "@shared/*": [
+          "src/app/shared/*"
+      ],
+      "@core/*": [
+          "src/app/core/*"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
