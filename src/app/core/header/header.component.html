@@ -1,0 +1,13 @@
+<div class="header">
+    <div class="header_item">
+        <img class="header_logo" src="assets/images/logo.jpg" alt="">
+    </div>
+    <div class="header_item">
+        <a class="header_link"  *ngIf="changeUserLogo; else showLink" (click)="onClick()" href="">Log in</a>
+        <ng-template #showLink>
+            <a class="header_link" href="">User</a>
+            <a class="header_link" href="">Log off</a>
+        </ng-template>
+       
+    </div>
+</div>
