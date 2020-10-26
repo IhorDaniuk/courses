@@ -7,17 +7,17 @@
     -webkit-box-shadow: 2px 12px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 2px 12px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 2px 12px 8px 0px rgba(34, 60, 80, 0.2);
-    &_item {
+    &__item {
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
-    &_logo {
+    &__logo {
         width: 23%;
         margin-left: 15px;
     }
 
-    &_link {
+    &__link {
         margin-right: 15px;
         color: white;
         &:hover {
