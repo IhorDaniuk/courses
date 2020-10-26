@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HeaderComponent } from './core/header/header.component';
+import { HeaderComponent } from '@core/components/header/header.component';
+import { SearchComponent } from '@shared/search/search.component';
 
 const routes: Routes = [
   { path: 'home', component: HeaderComponent},
-  
+  { path: 'search', component: SearchComponent},
 ];
 
 @NgModule({
