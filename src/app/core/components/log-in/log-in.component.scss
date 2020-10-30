@@ -1,0 +1,31 @@
+@import 'styles';
+
+.login {
+    @include  borderShadow();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    max-width: 450px;
+    height: 350px;
+
+    &__input {
+        margin: 0 auto;
+        border: transparent;
+        border-bottom: 1px solid black;
+        outline: none;
+        width: 80%;
+        margin-bottom: 30px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    &__button {
+        @include buttonCourses();
+        width: 30%;
+        margin: 0 auto;
+    }
+}

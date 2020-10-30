@@ -1,0 +1,9 @@
+<form [formGroup]="formGroup" class="login" (ngSubmit)="showCourses(formGroup.value)" (ngSubmit)="checkoutForm(formGroup.value)" novalidate>
+    <input type="text" class="login__input" formControlName="firstName" placeholder="firstName">
+    <input type="text" class="login__input" formControlName="lastName" placeholder="lastName">
+    <input type="text" class="login__input" formControlName="email" placeholder="email">
+    <div *ngIf="_email.invalid && (_email.touched || _email.dirty)">
+        <span *ngIf="_email.errors?.required">Field is required</span>
+    </div>
+    <button class="login__button" type="submit">Log In</button>
+</form>

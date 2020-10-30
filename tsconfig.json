@@ -6,15 +6,19 @@
       "@env": [
           "src/environments/environment"
       ],
-      "@app/*": [
-          "src/app/*"
-      ],
       "@shared/*": [
           "src/app/shared/*"
       ],
       "@core/*": [
           "src/app/core/*"
-      ]
+      ],
+      "@courses/*": [
+        "src/app/courses/*"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ],
+
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

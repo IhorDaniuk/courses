@@ -1,0 +1,12 @@
+<app-search></app-search>
+
+<div class="courses">
+    <div class="courses__button-top">
+        <button class="courses__button-item">Add Courses</button>
+    </div>  
+    <div  *ngFor="let course of coursesData">
+        <app-courses-card [course]="course" (deleteItem)="onDelete($event)"></app-courses-card>
+    </div>
+</div>
+
+<div class="courses__load">Load More</div>

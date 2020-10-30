@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HeaderComponent } from '@core/components/header/header.component';
-import { SearchComponent } from '@shared/search/search.component';
+
+import { LogInComponent } from '@core/components/log-in/log-in.component';
+import { CourseFormComponent } from '@courses/components/course-form/course-form.component';
+import { CoursesVideoComponent } from './courses/components/courses-video/courses-video.component';
 
 const routes: Routes = [
-  { path: 'home', component: HeaderComponent},
-  { path: 'search', component: SearchComponent},
+  { path: 'userLogIn', component: LogInComponent},
+  { path: 'coursesvideo', component: CoursesVideoComponent },
+  { path: 'courseform', component: CourseFormComponent}
+  // { path: '', component: AppComponent },
+  // добавить "" и ** пути
+
 ];
 
 @NgModule({
