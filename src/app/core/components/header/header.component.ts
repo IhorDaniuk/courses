@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,16 +6,12 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  public islogged: boolean = true;
+export class HeaderComponent {
+  public islogged: boolean = true; // ?
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
-
   public logIn(): void {
-    this.islogged = false;
+    this.router.navigateByUrl('/userLogIn');
   }
-
 }

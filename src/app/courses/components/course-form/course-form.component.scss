@@ -1,0 +1,39 @@
+@import 'styles';
+
+.course__form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    &-item {
+        @include borderShadow();
+        border: 1px solid transparent;
+        border-radius: 10px;
+        width: 100%;
+        padding: 30px;
+        margin: 0 auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &-input {
+        height: 50px;
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 7px;
+        outline: none;
+        cursor: pointer;
+        border: 1px solid black;
+        &:nth-child(2) {
+            margin-top: 21px;
+        }
+    }
+}
+.button__item {
+        @include buttonCourses();
+}
+.width__changed{
+    width: 143px;
+}
+
