@@ -1,14 +1,17 @@
 <div class="header">
     <div class="header__item">
-        <a [routerLink]="['/coursesvideo']">
+        
+        <a [routerLink]="['/home']">
             <img class="header__logo" src="assets/images/logo.jpg" alt="">
         </a>
     </div>
     <div class="header__item">
-        <a routerLink="" class="header__link"  *ngIf="islogged; else userLogged" (click)="logIn()">Log in</a>
+        <div class="header__link"  *ngIf="userFirstName | async; else userLogged" >
+            <p class="header__link">{{userFirstName | async}}</p>
+            <p class="header__link" (click)="logOfUser()">Log off</p>
+        </div>
         <ng-template #userLogged>
-            <p class="header__link" href="">User Name</p>
-            <a class="header__link" href="">Log off</a>
+            <a class="header__link" [routerLink]="['/userLogIn']">Log in</a>
         </ng-template>       
     </div>
 </div>

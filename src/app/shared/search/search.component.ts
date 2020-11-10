@@ -1,7 +1,8 @@
-import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { fromEvent } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-search',
@@ -11,6 +12,7 @@ import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs/operators'
 export class SearchComponent implements AfterViewInit {
   fasearch = faSearch;
   @ViewChild('search', {static: false}) search: ElementRef;
+  @Output() searchResult: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
@@ -18,13 +20,10 @@ export class SearchComponent implements AfterViewInit {
 
     fromEvent(this.search.nativeElement, 'input')
     .pipe(
-      debounceTime(1000),
+      debounceTime(500),
       map((input: InputEvent) => (input.target as HTMLInputElement).value),
-      filter(value => value.length >= 2),
+      // filter(value => value.length >= 2),
       distinctUntilChanged()
-  ).subscribe((res: string) => console.log(res))
+  ).subscribe((res: string) => this.searchResult.emit(res))
   }
- 
-
-
 }

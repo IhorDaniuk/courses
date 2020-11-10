@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'courses';
+
+  public srcPecture = 'https://www.simplilearn.com/ice9/free_resources_article_thumb/angularjs-vs-angular-2-vs-angular-4-differences.jpg';
 }

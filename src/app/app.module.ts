@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GlobalHttpInterceptor } from '@core/http.interceptor';
 
-import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/app.component';
-import { CoreModule } from '@core/core.module';
 import { CoursesModule } from './courses/courses.module';
-import { HttpClientModule } from '@angular/common/http';
-
+import { AppRoutingModule } from '@app/app-routing.module';
+import { CoreModule } from '@core/core.module';
+import { ModalModule } from '@shared/modal/modal.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,10 +19,20 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     CoreModule,
     CoursesModule,
+    ModalModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GlobalHttpInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

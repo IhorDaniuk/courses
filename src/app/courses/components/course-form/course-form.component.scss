@@ -7,33 +7,47 @@
     margin: 0 auto;
     margin-top: 50px;
     &-item {
-        @include borderShadow();
+        @include borderShadow;
         border: 1px solid transparent;
         border-radius: 10px;
         width: 100%;
         padding: 30px;
         margin: 0 auto; 
+        margin-bottom: 51px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+    &-label {
+        width: 85%;
+        display: flex;
+    }
     &-input {
+        @include borderShadow;
         height: 50px;
         width: 70%;
+        padding-left: 5px;
+        margin-left: 20px;
+        margin-bottom: 25px;
         margin: 0 auto;
         border-radius: 7px;
+        border: 1px solid transparent;
         outline: none;
         cursor: pointer;
-        border: 1px solid black;
-        &:nth-child(2) {
+        &:nth-child(-n+4) {
             margin-top: 21px;
         }
+        
+    }
+    &-button {
+        margin-top: 25px;
     }
 }
 .button__item {
-        @include buttonCourses();
+        @include buttonCourses;
 }
 .width__changed{
     width: 143px;
 }
+
 

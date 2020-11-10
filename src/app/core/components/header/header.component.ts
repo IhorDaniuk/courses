@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '@core/user-service/user.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  public islogged: boolean = true; // ?
+  public userFirstName = this.serviceUser.userName;
+  public userLogOf: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private serviceUser: UserService, ) { }
 
-  public logIn(): void {
+  public logOfUser(): void {
+    this.serviceUser.userName.next(null);
     this.router.navigateByUrl('/userLogIn');
   }
 }

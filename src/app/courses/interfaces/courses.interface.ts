@@ -1,4 +1,5 @@
 export interface Course {
+    emit(value: Course);
     id: number;
     title: string;
     description: string;

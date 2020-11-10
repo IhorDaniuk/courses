@@ -1,15 +1,30 @@
 <form class="course__form" [formGroup]="formCourse" novalidate>
 
     <div class="course__form-item">
-        <input class="course__form-input" formControlName="courseTitle" />
-        <input class="course__form-input" formControlName="courseText" />
+        <label class="course__form-label"> Date:
+            <input type="text" [readonly]="true" class="course__form-input form-width" formControlName="date">
+        </label>
+        
+        <label class="course__form-label"> Change Duration:
+        <input type="text" class="course__form-input form-width" [ngStyle]="{'margin-right': '46px'}" formControlName="duration">
+        </label>
 
-        <div class="course__button">
-            <button class="button__item">Do not change</button>
-            <button class="button__item width__changed">Save</button>
+        <label class="course__form-label"> Change Title:
+        <input class="course__form-input" formControlName="title" />
+        </label>
+
+        <label class="course__form-label"> Change Text:
+        <textarea class="course__form-input" 
+                  rows="100" cols="45" name="text"
+                  formControlName="description">
+        </textarea>
+        </label>
+        
+        <div class="course__form-button">
+            <button class="button__item" (click)="cancelClick()">Cancel</button>
+            <button class="button__item width__changed"
+                (click)="submitCourse(formCourse.value)"
+             >{{submitButtonText}}</button>
         </div>
-    </div>
-   
-
-    
+    </div>    
 </form>

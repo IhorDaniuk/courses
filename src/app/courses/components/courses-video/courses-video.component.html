@@ -1,11 +1,28 @@
-<app-search></app-search>
-
+<app-search (searchResult)="searchedResult($event)"></app-search>
+<app-modal
+    *ngIf="isModalVisible"
+    [isModalControlVisible]="false"
+    [modalTitle]="'Add Course'"
+    (closeModal)="isModalVisible = false"
+>
+    <app-course-form
+        [submitButtonText]="'Edit'"
+        [courseData]="courseEditData"
+        (cancel)="isModalVisible = false"
+        (formData)="onFormDataSubmit($event)">
+    </app-course-form>
+</app-modal>
 <div class="courses">
     <div class="courses__button-top">
-        <button class="courses__button-item">Add Courses</button>
-    </div>  
+        <button class="courses__button-add" (click)="addFormCourse()" >Add Courses</button>
+    </div>
+
     <div  *ngFor="let course of coursesData">
-        <app-courses-card [course]="course" (deleteItem)="onDelete($event)"></app-courses-card>
+        <app-courses-card 
+            [course]="course"
+            (deleteItem)="onDelete($event)"
+            (editItem)="editItem($event)">
+        </app-courses-card>
     </div>
 </div>
 

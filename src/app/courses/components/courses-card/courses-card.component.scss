@@ -1,7 +1,7 @@
 @import 'styles';
 
 .card {
-    @include  borderShadow();
+    @include  borderShadow;
     display: flex;
     align-items: center;
     width: 90%;
@@ -12,6 +12,10 @@
     padding-bottom: 15px; 
     &__faIcon {
         margin-right: 10px;
+    }
+    &__time {
+        display: flex;
+        align-items: baseline;
     }
     
     &__title {
@@ -29,9 +33,12 @@
        margin-left: 50px;
     }
     &__button-item {
-       @include buttonCourses();
+       @include buttonCourses;
        display: flex;
        align-items: center;
        
     }
+}
+.card-wrapp {
+    width: 70%;
 }

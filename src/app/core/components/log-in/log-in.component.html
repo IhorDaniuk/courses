@@ -1,9 +1,16 @@
-<form [formGroup]="formGroup" class="login" (ngSubmit)="showCourses(formGroup.value)" (ngSubmit)="checkoutForm(formGroup.value)" novalidate>
+<form [formGroup]="formGroup" class="login" novalidate>
     <input type="text" class="login__input" formControlName="firstName" placeholder="firstName">
-    <input type="text" class="login__input" formControlName="lastName" placeholder="lastName">
-    <input type="text" class="login__input" formControlName="email" placeholder="email">
     <div *ngIf="_email.invalid && (_email.touched || _email.dirty)">
-        <span *ngIf="_email.errors?.required">Field is required</span>
+        <span class="login__error"  *ngIf="_email.errors?.required">Обязательное поле</span>
     </div>
-    <button class="login__button" type="submit">Log In</button>
+
+    <input type="text" class="login__input" formControlName="email" placeholder="email">
+    <p class="login__email">Copy and paste this email:   Ihor_Daniuk@gmail.com</p>
+    <div *ngIf="_email.invalid && (_email.touched || _email.dirty)">
+          <span class="login__errors"  *ngIf="_email.errors?.required">Обязательное поле</span>
+          <span class="login__errors"  *ngIf="_email.errors?.min">Значение должно быть больше или равно</span>
+          <span class="login__errors" *ngIf="_email.errors?.email">Некорректый имеил</span>
+    </div>
+
+    <button class="login__button" type="button"  (click)="showCourses(formGroup.value)">Log In</button>
 </form>
