@@ -11,7 +11,6 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 export class ModalComponent  {
   public faCross = faTimesCircle;
   public addCourse: Course[];
-  // public modalTitle: string = 'Add Course';
 
   @Input() modalTitle: string = '';
   @Input() isModalControlVisible: boolean;
@@ -28,14 +27,13 @@ export class ModalComponent  {
 
   public onCloseModal(): void {
     this.closeModal.emit();
-}
+  }
 
-public onSubmit(): void {
-    this.modalSubmit.emit(true);
-}
+  public onSubmit(): void {
+      this.modalSubmit.emit(true);
+  }
 
-public onCancel(): void {
-    this.modalCancel.emit(false);
-}
-
+  public onCancel(): void {
+      this.modalCancel.emit(false);
+  }
 }

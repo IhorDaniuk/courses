@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { COURSES } from '@core/user-service/user.service';
+
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Course } from './interfaces/courses.interface';
 
@@ -39,9 +39,5 @@ export class CourseService {
 
   public getEditCourseData(): Course {
     return this.editCourse;
-  }
-
-
-
-  
+  }  
 } 

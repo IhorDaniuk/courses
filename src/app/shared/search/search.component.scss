@@ -1,9 +1,7 @@
 .search {
     margin-top: 15px;
-    margin-left: 20px;
+    margin-left: 60px;
     position: relative;
-    left: 50px;
-
     &__input {
         height: 25px;
         border: 0px transparent;
@@ -18,18 +16,4 @@
         left: -14px;
         color: #888b98;
     }
-
-    // &__button {
-    //     background: #9bc837;
-    //     color: white;
-    //     margin-left: 15px;
-    //     padding: 5px;
-    //     border-radius: 7px;
-    //     outline: none;
-    //     &:focus {
-    //         background: #b2e599;
-    //     }
-    // }
-
-
 }

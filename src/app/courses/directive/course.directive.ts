@@ -13,7 +13,7 @@ export class CourseDirective implements OnInit {
       this.render.setStyle(this.element.nativeElement, 'border', '2px solid rgb(48, 182, 221)')
     }  
   }
-  //вычитание разницы из двух дат
+  
   public changeColor(date: Date): number{
     const newDate = new Date();
     return Math.ceil(Math.abs(new Date(date).getTime() - newDate.getTime()) / (1000 * 3600 * 24));

@@ -42,3 +42,21 @@
 .card-wrapp {
     width: 70%;
 }
+@media ( min-width: 640px) and (max-width: 940px) {
+    .card__time {
+        flex-direction: column;
+}
+} 
+
+@media ( min-width: 320px) and (max-width: 640px) {
+    .card {
+        flex-direction: column;
+        &__text {
+            margin-bottom: 15px;
+        }
+        &__time {
+            display: flow-root;
+        }
+    }
+  
+}

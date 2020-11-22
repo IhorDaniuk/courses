@@ -2,21 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { HeaderComponent } from '@core/components/header/header.component';
-import { FooterComponent } from '@core/components//footer/footer.component';
-import { CourseComponent } from './components/course/course.component';
+import { UserService } from '@core/services/user.service';
+import { LogInComponent } from '@core/components/log-in/log-in.component';
+import { AuthgaurdGuard } from '@core/guard/authgaurd.guard';
 
-import { UserService } from './user-service/user.service';
-import { LogInComponent } from './components/log-in/log-in.component';
-import { AuthgaurdGuard } from './guard/authgaurd.guard';
-import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent,
-    CourseComponent,
     LogInComponent,
   ],
   imports: [
@@ -24,13 +22,12 @@ import {MatMenuModule} from '@angular/material/menu';
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-    MatMenuModule,
+    SimpleNotificationsModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [UserService, AuthgaurdGuard ],
   exports: [
     HeaderComponent,
-    FooterComponent,
-    CourseComponent, 
     LogInComponent,
   ]
 })

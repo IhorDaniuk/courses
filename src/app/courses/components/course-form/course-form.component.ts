@@ -30,6 +30,7 @@ export class CourseFormComponent implements OnInit {
   public submitCourse(courseData: Course): void {
     this.formData.emit(courseData);
     this.resetFormData();
+    this.router.navigateByUrl('/coursesvideo')
   }
   
   public cancelClick(): void {

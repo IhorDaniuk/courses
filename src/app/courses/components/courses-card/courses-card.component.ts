@@ -21,7 +21,7 @@ export class CoursesCardComponent  {
   public faClock = faClock;
   public faCalendar = faCalendarAlt;
 
-  constructor(private router: Router, private courseService: CourseService){}
+  constructor(private courseService: CourseService){}
   
   public deleteCardCourses(id: number): void {
     this.deleteItem.emit(id);

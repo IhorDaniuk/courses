@@ -1,24 +1,23 @@
-<div class="card" appCourse   [date]="course.date">
-    <div class="card-wrapp">
-    
-    <div class="card__time">
-        <h1 class="card__title">{{ course.title }}</h1> 
-
-        <p class="card__time-item">
-            <fa-icon  [icon]="faClock"  [ngStyle]="{ 'margin-left': '25px'}"></fa-icon>
-            {{ course.duration | duration}}
-        </p>
-        <p class="card__time-item">
-            <fa-icon  [icon]="faCalendar" [ngStyle]="{ 'margin-left': '25px'}"></fa-icon>
-            {{ course.date | date:'yyyy MMMM dd':null:'ru' }}
-        </p>
-    </div>
-    <div class="">
-        <p class="card__text">{{ course.description }}</p>
-    </div>
-    
-
-   
+<div class="card" appCourse [date]="course.date">
+    <div class="card-wrapp">    
+        <div class="card__time">
+            <div class="">
+                <h1 class="card__title">{{ course.title }}</h1> 
+            </div>
+            <div class="">
+                <p class="card__time-item">
+                    <fa-icon  [icon]="faClock"  [ngStyle]="{ 'margin-left': '25px'}"></fa-icon>
+                    {{ course.duration | duration}}
+                </p>
+                <p class="card__time-item">
+                    <fa-icon  [icon]="faCalendar" [ngStyle]="{ 'margin-left': '25px'}"></fa-icon>
+                    {{ course.date | date:'dd MMMM yyyy':null:'ru' }}
+                </p>
+            </div>       
+        </div>
+        <div class="">
+            <p class="card__text">{{ course.description }}</p>
+        </div>
     </div>
 
     <div class="card__button">

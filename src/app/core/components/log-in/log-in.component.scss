@@ -28,20 +28,34 @@
         padding-bottom: 21px;
     }
     &__error {
-        position: fixed;
-        left: 45%;
-        top: 16.5rem;
-        color: red;
+        position: sticky;
+        bottom: 21.5rem;
+        margin-left: 161px;
     }
     &__errors {
-        position: fixed;
-        left: 26.5rem;
-        top: 19.5rem;
         color: red;
     }
     &__button {
         @include buttonCourses;
         width: 30%;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 570px) {
+
+    .login {
+        margin-bottom: 34px;
+
+        &__error {
+            bottom: 22rem;
+            margin-left: 114px;
+        }
+        &__email {
+            margin-left: 62px;
+        }
+        &__button {
+            padding: 10px 20px;
+        }
     }
 }

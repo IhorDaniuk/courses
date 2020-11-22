@@ -9,7 +9,7 @@ import { CoursesModule } from './courses/courses.module';
 import { AppRoutingModule } from '@app/app-routing.module';
 import { CoreModule } from '@core/core.module';
 import { ModalModule } from '@shared/modal/modal.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
   ],
   providers: [
     {

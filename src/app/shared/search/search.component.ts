@@ -14,16 +14,12 @@ export class SearchComponent implements AfterViewInit {
   @ViewChild('search', {static: false}) search: ElementRef;
   @Output() searchResult: EventEmitter<string> = new EventEmitter();
 
-  constructor() { }
-
   ngAfterViewInit(): void {
-
     fromEvent(this.search.nativeElement, 'input')
     .pipe(
       debounceTime(500),
       map((input: InputEvent) => (input.target as HTMLInputElement).value),
-      // filter(value => value.length >= 2),
-      distinctUntilChanged()
-  ).subscribe((res: string) => this.searchResult.emit(res))
+      distinctUntilChanged())
+        .subscribe((res: string) => this.searchResult.emit(res))
   }
 }
